@@ -44,3 +44,9 @@ As soon as you get the Microsoft Account requirement during the installation pro
 1. Shift + F10
 2. start ms-cxh:localonly​
 3. Make a generic account
+
+# Source
+
+Start ms-cxh:localonly
+
+https://www.hexacorn.com/blog/2022/01/16/ms-cxh-and-ms-cxh-full-handlers/
