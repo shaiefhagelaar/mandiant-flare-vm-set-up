@@ -1,4 +1,4 @@
-# mandiant-flare-vm-set-up
+# Mandiant-flare-vm-set-up
 Flare VM for malware
 
 # Installation
