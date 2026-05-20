@@ -1,6 +1,11 @@
 # mandiant-flare-vm-set-up
 Flare VM for malware
 
+# Installation
+
+Go to this repo and follow the instructions.
+
+https://github.com/mandiant/flare-vm
 
 ## Requirements
 
@@ -38,4 +43,4 @@ As soon as you get the Microsoft Account requirement during the installation pro
 
 1. Shift + F10
 2. start ms-cxh:localonly​
-3. Make a generic account 
+3. Make a generic account
