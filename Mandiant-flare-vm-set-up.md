@@ -63,7 +63,7 @@ https://www.hexacorn.com/blog/2022/01/16/ms-cxh-and-ms-cxh-full-handlers/
 
 If you want to disable the network look here: 
 
-When you have your flare-vm set up open look for the Edit virtual machine settings tab and click on it
+When you have your flare-vm set up open look for the Edit virtual machine settings tab and click on it.
  
 <img width="2557" height="1363" alt="Disable_Network_Flare_VM_0" src="https://github.com/user-attachments/assets/38910807-c272-4721-948f-563e5bc8db2c" />
 
