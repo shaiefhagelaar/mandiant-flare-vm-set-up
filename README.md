@@ -10,21 +10,13 @@ https://github.com/mandiant/flare-vm
 
 ## Requirements
 
-These requirements are mandetory to run the Flare-VM smoothly. Network will be disabled to reduce the attack surface of any malware that you might download and analyze. Make sure you cover your basics before you attempt working with malicious files. We'll be using a Windows 10 & 11 iso.
+These requirements are mandetory to run the Flare-VM smoothly. Network will be disabled to reduce the attack surface of any malware that you might download and analyze. Make sure you cover your basics before you attempt working with malicious files. We'll be using a Windows 10 (there's a seperate write up for the Windows 11 installation). We do make a distinction between hardware and software requirements to keep the documentation streamlined.
 
-## Workaround for Microsoft Account (20/05/2025)
+Use best practices when Reverse Engineering and/or analyzing samples of malware. Using an isolated security framework like Flare-VM doesn't give a 100% guarantee that your host machine is safe whilst virtiualizing the guest OS. There's a chance that the malware stays dormant.   
 
-Make sure you do the installation properly. Download the official Windows 10/11 iso from the MS website.
+### Caution
 
-Issues whilst booting up the iso might occur. Press a any when it prompt you to do so, if you get an error reboot and retry untill you see the Windows logo. No need to follow the wizard. As soon as you get the wizard set-up loaded follow these instructions:
-
-1. Shift + F10
-2. start ms-cxh:localonly​
-3. Make a generic account
-
-## Caution
-
-These instruction should suffice. I'll come 
+These instruction should suffice. I'll add to the documentation on how to do it (21/05/2026).
 
     - Disable all networking devices on the guest Windows 10/11 guest OS
     - Disable copy/paste functions
@@ -32,14 +24,6 @@ These instruction should suffice. I'll come
     - Take another snapshot after removing the Windows anti-virus
     - Take the last snapshot after Flare-VM is done installing
     - Disable networking in the Flare-VM guest
-
-
-### Source Bypass MS Account
-
-https://www.hexacorn.com/blog/2022/01/16/ms-cxh-and-ms-cxh-full-handlers/
-
-
-Use best practices when Reverse Engineering and/or analyzing samples of malware. Using an isolated security framework like Flare-VM doesn't give a 100% guarantee that your host machine is safe whilst virtiualizing the guest OS. There's a chance that the malware stays dormant.   
 
 ### Hardware
 
@@ -58,6 +42,20 @@ This runs VMware Workstation plus everything else, so it needs headroom well bey
     - Username with no spaces or special characters (the installer fails otherwise).
     - Take a clean snapshot after Windows is configured but before running the FLARE-VM installer, so you can roll back if it breaks.
 
+## Workaround for Microsoft Account (20/05/2026)
+
+Make sure you do the installation properly. Download the official Windows 10 iso from the MS website.
+
+Issues whilst booting up the iso might occur. Press a any when it prompt you to do so, if you get an error reboot and retry untill you see the Windows logo. No need to follow the wizard. As soon as you get the wizard set-up loaded follow these instructions:
+
+1. Shift + F10
+2. start ms-cxh:localonly​
+3. Make a generic account
+
+### Source Bypass MS Account
+
+https://www.hexacorn.com/blog/2022/01/16/ms-cxh-and-ms-cxh-full-handlers/
+
 ### Using Windows 11
 
 Windows 11 is harder than Windows 10 here because of its hardware gate. In VMware Workstation you need to:
@@ -66,3 +64,5 @@ Set the VM firmware to UEFI and add a virtual TPM 2.0 device — Windows 11 won'
 Be aware that Windows 11 24H2 in particular has known install friction with FLARE-VM that the 23H2/Windows 10 paths don't hit, so some guides recommend using an older feature update if you run into installer errors.
 
 Microsoft's baseline for the OS itself is a 2-core 64-bit CPU, 4 GB RAM, and 64 GB storage, but those are far below what you'd actually allocate for analysis work.
+
+For more information about installing Windows 11 have a look at the Windows-11-installation.md
