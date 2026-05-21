@@ -1,13 +1,18 @@
 # Mandiant-flare-vm-set-up
+
 Flare VM for malware
 
-# Installation
+# Installation for Windows 10
 
 Go to this repo and follow the instructions.
 
 https://github.com/mandiant/flare-vm
 
-##
+## Requirements
+
+These requirements are mandetory to run the Flare-VM smoothly. Network will be disabled to reduce the attack surface of any malware that you might download and analyze. Make sure you cover your basics before you attempt working with malicious files. We'll be using a Windows 10 & 11 iso.
+
+## Workaround for Microsoft Account (20/05/2025)
 
 Make sure you do the installation properly. Download the official Windows 10/11 iso from the MS website.
 
@@ -17,26 +22,41 @@ Issues whilst booting up the iso might occur. Press a any when it prompt you to 
 2. start ms-cxh:localonly​
 3. Make a generic account
 
-## Requirements
+## Caution
 
-These requirements are mandetory to run the Flare-VM smoothly. Network will be disabled to reduce the attack surface of any malware that you might download and analyze. Make sure you cover your basics before you attempt working with malicious files. We'll be using a Windows 10 & 11 iso.
+These instruction should suffice. I'll come 
+
+    - Disable all networking devices on the guest Windows 10/11 guest OS
+    - Disable copy/paste functions
+    - Take a snapshot after installing the Windows 10/11 guest OS
+    - Take another snapshot after removing the Windows anti-virus
+    - Take the last snapshot after Flare-VM is done installing
+    - Disable networking in the Flare-VM guest
+
+
+### Source Bypass MS Account
+
+https://www.hexacorn.com/blog/2022/01/16/ms-cxh-and-ms-cxh-full-handlers/
+
+
+Use best practices when Reverse Engineering and/or analyzing samples of malware. Using an isolated security framework like Flare-VM doesn't give a 100% guarantee that your host machine is safe whilst virtiualizing the guest OS. There's a chance that the malware stays dormant.   
 
 ### Hardware
 
 This runs VMware Workstation plus everything else, so it needs headroom well beyond the guest:
 
-- CPU: 64-bit with hardware virtualization (Intel VT-x / AMD-V) enabled in BIOS/UEFI. 4+ cores recommended so you can give the VM 2 without starving the host.
-- RAM: 16 GB minimum in practice. You'll allocate 8 GB to the guest, and you want room left over for the host and possibly a second VM (e.g. REMnux/INetSim for network simulation).
-- Disk: 100+ GB free. The VM itself needs ~80–100 GB, and snapshots grow that significantly — each snapshot can add tens of GB.
-- Virtualization platform: VMware Workstation (Pro is now free for personal use under Broadcom). Workstation gives you better snapshot handling and performance than VirtualBox.
+    - CPU: 64-bit with hardware virtualization (Intel VT-x / AMD-V) enabled in BIOS/UEFI. 4+ cores recommended so you can give the VM 2 without starving the host.
+    - RAM: 16 GB minimum in practice. You'll allocate 8 GB to the guest, and you want room left over for the host and possibly a second VM (e.g. REMnux/INetSim for network simulation).
+    - Disk: 100+ GB free. The VM itself needs ~80–100 GB, and snapshots grow that significantly — each snapshot can add tens of GB.
+    - Virtualization platform: VMware Workstation (Pro is now free for personal use under Broadcom). Workstation gives you better snapshot handling and performance than VirtualBox.
 
 ### Software
 
-- A clean Windows 11 install from the official Microsoft ISO — no other software, fresh state.
-- PowerShell 5+ (ships with Windows 11) and .NET 4.5+.
-- An internet connection, with Tamper Protection and any anti-malware (Windows Defender) disabled — preferably via Group Policy — and Windows Updates disabled. The installer checks for these but it's smoother to disable them first. GitHub
-- Username with no spaces or special characters (the installer fails otherwise).
-- Take a clean snapshot after Windows is configured but before running the FLARE-VM installer, so you can roll back if it breaks.
+    - A clean Windows 11 install from the official Microsoft ISO — no other software, fresh state.
+    - PowerShell 5+ (ships with Windows 11) and .NET 4.5+.
+    - An internet connection, with Tamper Protection and any anti-malware (Windows Defender) disabled — preferably via Group Policy — and Windows Updates disabled. The installer checks for these but it's smoother to disable them first. GitHub
+    - Username with no spaces or special characters (the installer fails otherwise).
+    - Take a clean snapshot after Windows is configured but before running the FLARE-VM installer, so you can roll back if it breaks.
 
 ### Using Windows 11
 
@@ -46,13 +66,3 @@ Set the VM firmware to UEFI and add a virtual TPM 2.0 device — Windows 11 won'
 Be aware that Windows 11 24H2 in particular has known install friction with FLARE-VM that the 23H2/Windows 10 paths don't hit, so some guides recommend using an older feature update if you run into installer errors.
 
 Microsoft's baseline for the OS itself is a 2-core 64-bit CPU, 4 GB RAM, and 64 GB storage, but those are far below what you'd actually allocate for analysis work.
-
-### Bypassing Microsoft Account
-
-
-
-# Source
-
-Start ms-cxh:localonly
-
-https://www.hexacorn.com/blog/2022/01/16/ms-cxh-and-ms-cxh-full-handlers/
