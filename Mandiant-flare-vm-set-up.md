@@ -25,11 +25,7 @@ These instruction should suffice. I'll add to the documentation on how to do it 
     - Take the last snapshot after Flare-VM is done installing
     - Disable networking in the Flare-VM guest
 
-### Source Disabling Network
 
-If you want to disable the network look here: 
- 
-<img width="2557" height="1363" alt="Disable_Network_Flare_VM_0" src="https://github.com/user-attachments/assets/38910807-c272-4721-948f-563e5bc8db2c" />
 
 
 ### Hardware
@@ -62,6 +58,28 @@ Issues whilst booting up the iso might occur. Press a any when it prompt you to 
 ### Source Bypass MS Account
 
 https://www.hexacorn.com/blog/2022/01/16/ms-cxh-and-ms-cxh-full-handlers/
+
+### Source Disabling Network
+
+If you want to disable the network look here: 
+
+    - When you have your flare-vm set up open look for the Edit virtual machine settings tab and click on it
+ 
+<img width="2557" height="1363" alt="Disable_Network_Flare_VM_0" src="https://github.com/user-attachments/assets/38910807-c272-4721-948f-563e5bc8db2c" />
+
+    - A window will open with the title 'Virtual Machine Settings'. You'll see a highlighted square bracket with No.1 make sure you click on it. **Side note(best practices): Hide and/or blur out the path files and other sensitve information if you do share screenshots**.
+
+<img width="1119" height="1072" alt="Disable_Network_Flare_VM_1" src="https://github.com/user-attachments/assets/ad0f72d9-3a4e-492a-b39b-fccc6b227f91" />
+
+    - Now you'll need to navigate to the Network Adapter tab. Make sure to click on it so we can proceed with disabeling the network connection between the host and guest OS.
+
+<img width="1110" height="1065" alt="Disable_Network_Flare_VM_2" src="https://github.com/user-attachments/assets/42df63fe-5718-42b7-ae09-e44ee8aa47f9" />
+
+    - We'll disable two functions under Device status (uncheck the checkbox under connect at power on) and Network connection (select the Host-Only: A private network shared with the host).
+
+    <img width="1114" height="1056" alt="Disable_Network_Flare_VM_3" src="https://github.com/user-attachments/assets/a987cb33-6758-409b-896c-c65882d90ac5" />
+
+Now you should be set to start reverse engineering safely on a guest os that you created yourself. Good luck and keep in mind to use best practices and document your findings.
 
 ### Using Windows 11
 
