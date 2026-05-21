@@ -7,9 +7,19 @@ Go to this repo and follow the instructions.
 
 https://github.com/mandiant/flare-vm
 
+##
+
+Make sure you do the installation properly. Download the official Windows 10/11 iso from the MS website.
+
+Issues whilst booting up the iso might occur. Press a any when it prompt you to do so, if you get an error reboot and retry untill you see the Windows logo. No need to follow the wizard. As soon as you get the wizard set-up loaded follow these instructions:
+
+1. Shift + F10
+2. start ms-cxh:localonly​
+3. Make a generic account
+
 ## Requirements
 
-These requirements are mandetory to run the Flare-VM smoothly. Network will be disabled to reduce the attack surface of any malware that you might download and analyze. Make sure you cover your basics before you attempt working with malicious files. We'll be using a Windows 11 iso
+These requirements are mandetory to run the Flare-VM smoothly. Network will be disabled to reduce the attack surface of any malware that you might download and analyze. Make sure you cover your basics before you attempt working with malicious files. We'll be using a Windows 10 & 11 iso.
 
 ### Hardware
 
@@ -39,11 +49,7 @@ Microsoft's baseline for the OS itself is a 2-core 64-bit CPU, 4 GB RAM, and 64 
 
 ### Bypassing Microsoft Account
 
-As soon as you get the Microsoft Account requirement during the installation process follow these instructions:
 
-1. Shift + F10
-2. start ms-cxh:localonly​
-3. Make a generic account
 
 # Source
 
