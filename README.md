@@ -25,6 +25,12 @@ These instruction should suffice. I'll add to the documentation on how to do it 
     - Take the last snapshot after Flare-VM is done installing
     - Disable networking in the Flare-VM guest
 
+### Source Disabling Network
+
+If you want to disable the network look here: 
+
+https://community.broadcom.com/vmware-cloud-foundation/communities/community-home/digestviewer/viewthread?MessageKey=18e75de6-f17d-41c5-a8fd-1d9fc6c3f1f6&CommunityKey=fb707ac3-9412-4fad-b7af-018f5da56d9f
+
 ### Hardware
 
 This runs VMware Workstation plus everything else, so it needs headroom well beyond the guest:
