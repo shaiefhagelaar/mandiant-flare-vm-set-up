@@ -28,8 +28,9 @@ These instruction should suffice. I'll add to the documentation on how to do it 
 ### Source Disabling Network
 
 If you want to disable the network look here: 
+ 
+<img width="2557" height="1363" alt="Disable_Network_Flare_VM_0" src="https://github.com/user-attachments/assets/38910807-c272-4721-948f-563e5bc8db2c" />
 
-https://community.broadcom.com/vmware-cloud-foundation/communities/community-home/digestviewer/viewthread?MessageKey=18e75de6-f17d-41c5-a8fd-1d9fc6c3f1f6&CommunityKey=fb707ac3-9412-4fad-b7af-018f5da56d9f
 
 ### Hardware
 
